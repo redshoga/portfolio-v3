@@ -4,8 +4,10 @@ import ReactMarkdown from "react-markdown";
 import { textStyle } from "../styles/textStyle";
 import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import vscDarkPlus from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus";
+import { ShareButtons } from "./ShareButtons";
 
 export type Props = {
+  currentUrl: string;
   title: string;
   createdAt: string;
   markdown: string;
@@ -21,6 +23,7 @@ export type Props = {
 
 const classNames = {
   title: "title",
+  shareButton: "share-button",
   createdAt: "created-at",
   mdContainer: "md-container",
   prevNextContainer: "prev-next-container",
@@ -42,6 +45,9 @@ const CodeBlock: React.FC<{
 export const PostDetail: React.FC<Props> = (props: Props) => (
   <Fragment>
     <article>
+      <div className={classNames.shareButton}>
+        <ShareButtons currentUrl={props.currentUrl} />
+      </div>
       <h1 className={classNames.title}>{props.title}</h1>
       <div className={classNames.createdAt}>{props.createdAt}に投稿</div>
       <div className={classNames.mdContainer}>
@@ -100,6 +106,15 @@ export const PostDetail: React.FC<Props> = (props: Props) => (
       }
     `}</style>
     <style jsx>{`
+      article {
+        position: relative;
+      }
+      .${classNames.shareButton} {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
       .${classNames.title} {
         ${textStyle({ weight: "bold", size: "l" })}
         margin: 0;

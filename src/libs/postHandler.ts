@@ -3,9 +3,11 @@ import path from "path";
 import matter from "gray-matter";
 import glob from "glob";
 import util from "util";
+import url from "url";
 import type { Props as PostOverviewProps } from "../components/PostOverview";
 import type { Props as PostDetailProps } from "../components/PostDetail";
 import { createdAtFormat } from "./createdAtFormat";
+import meta from "../../blog/config/meta.json";
 
 const promisedGlob = util.promisify(glob);
 
@@ -96,6 +98,7 @@ const postsToPostDetail = (posts: {
   title: posts.current.frontMatter.title,
   createdAt: createdAtFormat(new Date(posts.current.frontMatter.createdAt)),
   markdown: posts.current.markdownBody,
+  currentUrl: url.resolve(meta.baseUrl, posts.current.frontMatter.path),
   prevPost: posts.prev
     ? {
         href: posts.prev?.frontMatter.path,
