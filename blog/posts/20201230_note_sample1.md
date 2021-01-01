@@ -26,6 +26,16 @@ export const Component: React.FC = () => <div>hello</div>;
 
 [/tech/example](/tech/example) にアクセス!
 
+## サンプル画像
+
+![image](https://octodex.github.com/images/dojocat.jpg)
+
+![image](https://octodex.github.com/images/dojocat.jpg#width:200,height:200)
+
+![lenna](/posts/lenna.png#width:200,height:200)
+
+![lenna](/posts/lenna.png)
+
 ## Coctilibus excussit quam
 
 Delusum viribus putes quam has taurorum digiti triumphi perque onus voce,

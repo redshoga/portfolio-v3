@@ -1,10 +1,12 @@
 import Link from "next/link";
-import React, { Fragment } from "react";
+import React, { Fragment, ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import { textStyle } from "../styles/textStyle";
 import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import vscDarkPlus from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus";
 import { ShareButtons } from "./ShareButtons";
+import Image from "next/image";
+import { parseSizedImage } from "../libs/parseSizedImage";
 
 export type Props = {
   currentUrl: string;
@@ -42,6 +44,46 @@ const CodeBlock: React.FC<{
   );
 };
 
+const LinkBlock: React.FC<{
+  children: ReactNode;
+  href: string;
+}> = ({ children, href }) => (
+  <Link href={href}>
+    <a>{children}</a>
+  </Link>
+);
+
+const ImageBlock: React.FC<{
+  alt: string;
+  src: string;
+  title: string;
+}> = ({ alt, src, title }) => {
+  const parsedImage = parseSizedImage(src);
+  const fromNextImage = !src.startsWith("http");
+
+  return parsedImage.size ? (
+    fromNextImage ? (
+      <Image
+        alt={alt}
+        src={parsedImage.baseSrc}
+        title={title}
+        width={parsedImage.size.width}
+        height={parsedImage.size.height}
+      />
+    ) : (
+      <img
+        alt={alt}
+        src={parsedImage.baseSrc}
+        title={title}
+        width={parsedImage.size.width}
+        height={parsedImage.size.height}
+      />
+    )
+  ) : (
+    <img alt={alt} src={parsedImage.baseSrc} title={title} />
+  );
+};
+
 export const PostDetail: React.FC<Props> = (props: Props) => (
   <Fragment>
     <article>
@@ -54,12 +96,9 @@ export const PostDetail: React.FC<Props> = (props: Props) => (
         <ReactMarkdown
           source={props.markdown}
           renderers={{
-            link: ({ children, href }) => (
-              <Link href={href}>
-                <a>{children}</a>
-              </Link>
-            ),
+            link: LinkBlock,
             code: CodeBlock,
+            image: ImageBlock,
           }}
         />
       </div>
@@ -103,6 +142,10 @@ export const PostDetail: React.FC<Props> = (props: Props) => (
       }
       .${classNames.mdContainer} code {
         white-space: pre-line;
+      }
+
+      .${classNames.mdContainer} img {
+        max-width: 100%;
       }
     `}</style>
     <style jsx>{`
