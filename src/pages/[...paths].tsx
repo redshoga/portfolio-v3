@@ -1,9 +1,8 @@
 import React, { Fragment } from "react";
 import type { GetStaticProps, GetStaticPaths, NextPage } from "next";
-import { Post, postHandler } from "../libs/postHandler";
+import { postHandler } from "../libs/postHandler";
 import { PostDetail, Props as PostDetailProps } from "../components/PostDetail";
 import { CustomHead } from "../components/CustomHead";
-import { createdAtFormat } from "../libs/createdAtFormat";
 
 type PageQuery = {
   paths: string[];

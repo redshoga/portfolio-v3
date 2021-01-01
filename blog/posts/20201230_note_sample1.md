@@ -14,14 +14,17 @@ iussit. Nocens digitorum subvolat vecors se caput est pererratis equam tanto
 phocarum, ita ea est debilitaturum pocula misit, revirescere. Vides ponderis,
 rabie bracchia nubemque **quod nebulae** altae rursus, nurus.
 
-    if (wpa) {
-        keyboard.topology_word *= dataRomDrive(3);
-    }
-    dotHdv += file;
-    raid(98, publishing_trojan_marketing + ddrFirmwareZone + addressWiki, 4 +
-            -1);
-    memoryState.raw_leopard(-4 - duplex_kindle, 1 + moodleNum, dvdIntellectual(
-            qwerty / plug_paste_network));
+```tsx
+import React from "react";
+
+export const Component: React.FC = () => <div>hello</div>;
+```
+
+## サンプルリンク
+
+[hello](https://example.com) にアクセス!
+
+[/tech/example](/tech/example) にアクセス!
 
 ## Coctilibus excussit quam
 

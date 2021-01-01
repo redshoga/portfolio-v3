@@ -6,13 +6,18 @@ export const textStyle = (option: {
   weight: FontWeight;
 }): string => {
   const size: { [key in FontSize]: number } = {
-    xl: 32,
-    l: 24,
+    xl: 36,
+    l: 28,
     m: 14,
+  };
+
+  const weight: { [key in FontWeight]: number } = {
+    bold: 700,
+    regular: 404,
   };
 
   return `
     font-size: ${size[option.size]}px;
-    font-weight: ${option.weight};
+    font-weight: ${weight[option.weight]};
   `;
 };

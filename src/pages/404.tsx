@@ -12,7 +12,7 @@ const Page: React.FC = () => (
   <Fragment>
     <CustomHead title="404 Not Found" />
     <div className={classNames.container}>
-      <h2 className={classNames.title}>404 Not Found</h2>
+      <h1 className={classNames.title}>404 Not Found</h1>
       <p className={classNames.message}>
         お探しのページは見つかりませんでした。
       </p>

@@ -64,6 +64,11 @@ export const Heading: React.FC<Props> = (props: Props) => (
           height: 64px;
         }
 
+        h1 {
+          ${textStyle({ weight: "bold", size: "xl" })}
+          margin: 16px 0;
+        }
+
         ul {
           padding-inline-start: 0;
         }

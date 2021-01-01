@@ -43,7 +43,7 @@ export const PostOverview: React.FC<Props> = (props: Props) => (
       .${classNames.container} {
         position: relative;
         border-radius: 8px;
-        height: 200px;
+        height: 240px;
         padding: 0 40px;
         display: flex;
         align-items: center;
@@ -60,8 +60,8 @@ export const PostOverview: React.FC<Props> = (props: Props) => (
         position: absolute;
         right: 40px;
         content: "";
-        width: 16px;
-        height: 16px;
+        width: 8px;
+        height: 8px;
         border-top: 1px solid ${colors.black};
         border-right: 1px solid ${colors.black};
         transform: rotate(45deg);
