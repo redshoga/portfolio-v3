@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "isolatedModules": false,
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "jsx": "preserve"
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
+}
