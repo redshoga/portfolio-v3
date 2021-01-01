@@ -7,6 +7,7 @@ import { Heading } from "../components/Heading";
 import { globals } from "../styles/globals";
 import { normalize } from "../styles/normalize";
 import { CustomHead } from "../components/CustomHead";
+import { GoogleAnalytics } from "../components/GoogleAnalytics";
 
 const paddingSize = 120;
 
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Fragment>
       <CustomHead />
+      <GoogleAnalytics />
 
       <Container>
         <Align pb={paddingSize}>
