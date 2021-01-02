@@ -24,6 +24,7 @@ export type Props = {
 };
 
 const classNames = {
+  titleContainer: "title-container",
   title: "title",
   shareButton: "share-button",
   createdAt: "created-at",
@@ -87,10 +88,13 @@ const ImageBlock: React.FC<{
 export const PostDetail: React.FC<Props> = (props: Props) => (
   <Fragment>
     <article>
-      <div className={classNames.shareButton}>
-        <ShareButtons currentUrl={props.currentUrl} />
+      <div className={classNames.titleContainer}>
+        <h1 className={classNames.title}>{props.title}</h1>
+        <div className={classNames.shareButton}>
+          <ShareButtons currentUrl={props.currentUrl} />
+        </div>
       </div>
-      <h1 className={classNames.title}>{props.title}</h1>
+
       <div className={classNames.createdAt}>{props.createdAt}に投稿</div>
       <div className={classNames.mdContainer}>
         <ReactMarkdown
@@ -152,10 +156,11 @@ export const PostDetail: React.FC<Props> = (props: Props) => (
       article {
         position: relative;
       }
-      .${classNames.shareButton} {
-        position: absolute;
-        top: 0;
-        right: 0;
+
+      .${classNames.titleContainer} {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
       }
 
       .${classNames.title} {
@@ -164,6 +169,10 @@ export const PostDetail: React.FC<Props> = (props: Props) => (
       }
       .${classNames.title}, .${classNames.createdAt}, article {
         margin-bottom: 40px;
+      }
+
+      .${classNames.shareButton} {
+        margin-bottom: 8px;
       }
 
       .${classNames.prevNextContainer} {
