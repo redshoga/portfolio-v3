@@ -16,6 +16,13 @@ Other useful features
 - Generating a sitemap (`yarn prebuild`)
 - Google Analytics component (`/src/components/GoogleAnalytics`)
 
+Features to be implemented in the future
+
+- JSON-LD breadcrumb list
+- Individual pages
+- Add related posts to the post page
+- Add paging to the list page
+
 ## How to describe images in markdown
 
 `#width:100,height:100`のように記述すると画像のサイズを指定できます。
