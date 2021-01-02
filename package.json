@@ -10,6 +10,8 @@
     "prebuild": "ts-node --project tasks/tsconfig.json tasks/sitemap.ts"
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.6.22",
+    "@next/mdx": "^10.0.4",
     "glob": "^7.1.6",
     "gray-matter": "^4.0.2",
     "next": "10.0.4",

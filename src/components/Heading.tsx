@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import categories from "../../blog/config/categories.json";
+import fixedPages from "../../blog/config/fixedPages.json";
 import meta from "../../blog/config/meta.json";
 import { colors } from "../styles/colors";
 import { textStyle } from "../styles/textStyle";
@@ -17,6 +18,9 @@ const classNames = {
 
 const getCategoryName = (nextRouterAsPath: string): string =>
   nextRouterAsPath.split("?")[0].split("/")[1];
+
+const getPath = (nextRouterAsPath: string): string =>
+  nextRouterAsPath.split("?")[0];
 
 export const Heading: React.FC<Props> = (props: Props) => (
   <Fragment>
@@ -49,6 +53,24 @@ export const Heading: React.FC<Props> = (props: Props) => (
             </li>
           ))}
         </ul>
+
+        <ul>
+          {fixedPages.map((page) => (
+            <li key={page.path}>
+              <Link href={page.path}>
+                <a
+                  className={
+                    getPath(props.nextRouterAsPath) === page.path
+                      ? classNames.linkActive
+                      : undefined
+                  }
+                >
+                  {page.display}
+                </a>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </nav>
     </header>
     <style jsx>
@@ -69,8 +91,17 @@ export const Heading: React.FC<Props> = (props: Props) => (
           margin: 16px 0;
         }
 
+        nav {
+          display: inline-flex;
+        }
+
         ul {
           padding-inline-start: 0;
+        }
+        ul:last-child::before {
+          content: "|";
+          margin-left: 16px;
+          margin-right: 16px;
         }
 
         li {
