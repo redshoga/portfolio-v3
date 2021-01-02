@@ -18,10 +18,11 @@ Other useful features
 
 Features to be implemented in the future
 
-- JSON-LD breadcrumb list
-- Individual pages
+- Add JSON-LD breadcrumb list
+- Add individual pages
 - Add related posts to the post page
 - Add paging to the list page
+- Add OGP meta
 
 ## How to describe images in markdown
 
