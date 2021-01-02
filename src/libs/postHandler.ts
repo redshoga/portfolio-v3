@@ -16,6 +16,7 @@ export type FrontMatter = {
   createdAt: string;
   category: string;
   path: string;
+  description: string;
 };
 
 export type Post = {

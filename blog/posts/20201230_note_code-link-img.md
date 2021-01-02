@@ -3,6 +3,7 @@ title: コード,リンク,画像のサンプル
 createdAt: "2020-12-30T13:27:33+09:00"
 category: note
 path: /note/code-link-img
+description: コード,リンク,画像のサンプルの説明
 ---
 
 # コードと画像のサンプル

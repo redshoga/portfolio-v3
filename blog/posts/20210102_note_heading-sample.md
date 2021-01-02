@@ -3,6 +3,7 @@ title: h1~h6のサンプル
 createdAt: "2021-01-02T13:27:33+09:00"
 category: note
 path: /note/heading-sample
+description: h1~h6のサンプルの説明
 ---
 
 # おはよう

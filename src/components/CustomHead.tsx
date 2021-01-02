@@ -4,6 +4,7 @@ import meta from "../../blog/config/meta.json";
 
 export type Props = {
   title?: string;
+  description?: string;
 };
 
 export const CustomHead: React.FC<Props> = (props: Props) => (
@@ -15,5 +16,6 @@ export const CustomHead: React.FC<Props> = (props: Props) => (
       sizes="152x152"
     />
     <link href="/icon.jpg" rel="icon" sizes="32x32" type="image/jpg" />
+    <meta name="description" content={props.description || meta.description} />
   </Head>
 );

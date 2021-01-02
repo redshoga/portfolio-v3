@@ -40,7 +40,10 @@ export const getStaticProps: GetStaticProps<PageProps, PageQuery> = async (
 const Page: NextPage<PageProps> = (props) => {
   return (
     <Fragment>
-      <CustomHead title={props.category} />
+      <CustomHead
+        title={props.category}
+        description={`${props.category}に関する投稿一覧ページ`}
+      />
       {props.postOverviews.map((overview) => (
         <PostOverview key={overview.href} {...overview} />
       ))}

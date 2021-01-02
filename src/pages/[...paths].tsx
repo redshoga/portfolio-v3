@@ -23,21 +23,23 @@ export const getStaticPaths: GetStaticPaths<PageQuery> = async () => {
 
 type PageProps = {
   postDetail: PostDetailProps;
+  description: string;
 };
 
 export const getStaticProps: GetStaticProps<PageProps, PageQuery> = async (
   context
 ) => {
   const path = context.params?.paths as string[];
-  const posts = await postHandler.getPostFromPath(`/${path.join("/")}`);
-  if (!posts)
+  const post = await postHandler.getPostFromPath(`/${path.join("/")}`);
+  if (!post)
     throw new Error(
       "Failed to find the target post when executing getPostFromPath()"
     );
 
   return {
     props: {
-      postDetail: postHandler.postsToPostDetail(posts),
+      postDetail: postHandler.postsToPostDetail(post),
+      description: post.current.frontMatter.description,
     },
   };
 };
@@ -45,7 +47,10 @@ export const getStaticProps: GetStaticProps<PageProps, PageQuery> = async (
 const Page: NextPage<PageProps> = (props) => {
   return (
     <Fragment>
-      <CustomHead title={props.postDetail.title} />
+      <CustomHead
+        title={props.postDetail.title}
+        description={props.description}
+      />
       <PostDetail {...props.postDetail} />
     </Fragment>
   );
