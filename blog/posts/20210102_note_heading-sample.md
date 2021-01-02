@@ -1,8 +1,8 @@
 ---
-title: おはよう
+title: h1~h6のサンプル
 createdAt: "2021-01-02T13:27:33+09:00"
 category: note
-path: /note/sample2
+path: /note/heading-sample
 ---
 
 # おはよう
