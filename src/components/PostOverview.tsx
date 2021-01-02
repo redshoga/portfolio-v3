@@ -25,7 +25,7 @@ export const PostOverview: React.FC<Props> = (props: Props) => (
         <a className={classNames.link}>
           <div className={classNames.container}>
             <div>
-              <div className={classNames.title}>{props.title}</div>
+              <h1 className={classNames.title}>{props.title}</h1>
               <div className={classNames.createdAt}>
                 {props.createdAt}に投稿
               </div>
