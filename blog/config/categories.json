@@ -1,4 +1,4 @@
 [
-  { "name": "tech", "display": "技術系" },
-  { "name": "note", "display": "雑記" }
+  { "name": "tech", "display": "技術系", "path": "/tech" },
+  { "name": "note", "display": "雑記", "path": "/note" }
 ]

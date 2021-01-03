@@ -39,7 +39,7 @@ export const Heading: React.FC<Props> = (props: Props) => (
         <ul>
           {categories.map((category) => (
             <li key={category.name}>
-              <Link href={`/${category.name}`}>
+              <Link href={category.path}>
                 <a
                   className={
                     getCategoryName(props.nextRouterAsPath) === category.name
