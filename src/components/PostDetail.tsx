@@ -7,6 +7,8 @@ import vscDarkPlus from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark
 import { ShareButtons } from "./ShareButtons";
 import Image from "next/image";
 import { parseSizedImage } from "../libs/parseSizedImage";
+import { disqusUniversalCode } from "../libs/disqusUniversalCode";
+import Head from "next/head";
 
 export type Props = {
   currentUrl: string;
@@ -106,6 +108,17 @@ export const PostDetail: React.FC<Props> = (props: Props) => (
           }}
         />
       </div>
+
+      <article>
+        <div id="disqus_thread" />
+        <Head>
+          <script
+            async
+            defer
+            dangerouslySetInnerHTML={{ __html: disqusUniversalCode }}
+          />
+        </Head>
+      </article>
     </article>
     <div className={classNames.prevNextContainer}>
       <div className={classNames.next}>
