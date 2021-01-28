@@ -60,37 +60,6 @@ const ShareOnHatena = () => (
   </Fragment>
 );
 
-const ShareOnFacebook: React.FC<{ currentUrl: string }> = ({ currentUrl }) => (
-  <Fragment>
-    <div id="fb-root"></div>
-    <Head>
-      <script
-        async
-        defer
-        crossOrigin="anonymous"
-        src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v9.0"
-        nonce="tX5TEhsN"
-      ></script>
-    </Head>
-
-    <div
-      className="fb-share-button"
-      data-href={currentUrl}
-      data-layout="button"
-      data-size="small"
-    >
-      <a
-        target="_blank"
-        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-          currentUrl
-        )}&amp;src=sdkpreparse`}
-        className="fb-xfbml-parse-ignore"
-      >
-        シェア
-      </a>
-    </div>
-  </Fragment>
-);
 export const ShareButtons: React.FC<Props> = (props) => (
   <Fragment>
     <div className={classNames.container}>
@@ -99,9 +68,6 @@ export const ShareButtons: React.FC<Props> = (props) => (
       </div>
       <div className={classNames.button}>
         <ShareOnHatena />
-      </div>
-      <div className={classNames.button}>
-        <ShareOnFacebook currentUrl={props.currentUrl} />
       </div>
     </div>
     <style jsx>{`
