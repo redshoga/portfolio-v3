@@ -75,6 +75,7 @@ const ImageBlock: React.FC<{
       />
     ) : (
       <img
+        loading="eager"
         alt={alt}
         src={parsedImage.baseSrc}
         title={title}
