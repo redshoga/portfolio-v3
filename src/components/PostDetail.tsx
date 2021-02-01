@@ -34,6 +34,7 @@ const classNames = {
   prevNextContainer: "prev-next-container",
   prev: "prev",
   next: "next",
+  disqus: "disqus",
 };
 
 const CodeBlock: React.FC<{
@@ -110,7 +111,7 @@ export const PostDetail: React.FC<Props> = (props: Props) => (
         />
       </div>
 
-      <article>
+      <article className={classNames.disqus}>
         <div id="disqus_thread" />
         <Head>
           <script
@@ -195,6 +196,9 @@ export const PostDetail: React.FC<Props> = (props: Props) => (
       }
       .${classNames.prev} {
         text-align: right;
+      }
+      .${classNames.disqus} {
+        margin-top: 80px;
       }
     `}</style>
   </Fragment>
